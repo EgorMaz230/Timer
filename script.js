@@ -103,7 +103,7 @@ function startTimer() {
 
             if (hour === 0 && minutes === 0 && seconds === 0) {
                 clearInterval(myClock);
-                alert('Ok');
+                alert('Кінець');
             }
 
             clockElement.innerHTML = `${formatTime(hour)} : ${formatTime(minutes)} : ${formatTime(seconds)} : ${formatTime(Math.floor(milliseconds / 10))}`;
