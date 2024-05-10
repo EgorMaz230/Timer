@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="counter">10</div> -->
+
+    <!-- <div class="timer"></div>
+    <button class="button">кнопка</button> -->
+
+    
+    <!-- <script>
+        // 1задача
+    function Timer() {
+        let firstTime = 60 * 60; // початковий час - 1 година
+        const timer = document.querySelector('.timer');
+        const timerInterval = setInterval(() => {
+            const minutes = Math.floor((firstTime % 3600) / 60);
+            const seconds = firstTime % 60;
+            timer.textContent = `${minutes}:${seconds}`;
+            if (firstTime === 30 * 60) {
+                alert("Залишилось менше половини часу");
+            }
+            firstTime--;
+            if (firstTime === 0) {
+                clearInterval(timerInterval);
+                alert("Час вийшов");
+            }
+        }, 1000);
+    }
+    Timer();
+
+    // 2задача
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const button = document.querySelector('.button');
+    button.addEventListener('click', startTimer);
+});
+
+function Timer() {
+    let time = 30; 
+    const timer = document.querySelector('.timer');
+    const button = document.querySelector('.button');
+    const timerInterval = setInterval(() => {
+        time -= 0.1;
+        if (time <= 10 && time > 0) {
+            timer.style.animation = "animation 0.6s infinite";
+        } else {
+            timer.style.animation = "none";
+        }
+        const seconds = time.toFixed(1);
+        timer.textContent = seconds;
+        if (time <= 0) {
+            clearInterval(timerInterval);
+            button.disabled = false;
+        }
+    }, 100); 
+    button.disabled = true;
+}
+
+    
+    </script>
+    <style>
+        @keyframes animation {
+    0% { background-color: red; }
+    50% { background-color: yellow; }
+    100% { background-color: rgb(0, 255, 34); }
+}
+    </style> -->
+    <div class="timer-container">
+        <div class="input-group">
+          <input type="text" class="hour" placeholder="Години">
+          <input type="text" class="minutes" placeholder="Хвилини">
+          <input type="text" class="seconds" placeholder="Секунди">
+          <button class="submit">Старт</button>
+          <button class="stop">Стоп</button>
+          <button class="pause">Пауза</button>
+          <button class="resume">Продовжити</button>
+        </div>
+        <div class="clock">00 : 00 : 00</div>
+      </div>
+
+    
+    <script src="./script.js"></script>
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f3f3f3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+      
+        .timer-container {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+          text-align: center;
+        }
+      
+        .clock {
+          font-size: 2em;
+          margin: 0 auto;
+          width: 288px;
+        }
+      
+        .input-group {
+          margin-bottom: 10px;
+        }
+      
+        input[type="text"] {
+          padding: 5px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          width: 50px;
+          margin-right: 5px;
+        }
+      
+        .submit {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .resume {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .pause {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .stop {
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+      
+        .submit:hover {
+          background-color: #0056b3;
+        }
+      
+        @keyframes countdown {
+          from { color: #007bff; }
+          to { color: #ff0000; }
+        }
+      
+        .clock.running {
+          animation: countdown 1s infinite alternate;
+        }
+      </style>
+</body>
+</html>
