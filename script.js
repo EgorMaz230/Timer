@@ -71,7 +71,6 @@ function startTimer() {
     let minutes = parseInt(document.querySelector('.minutes').value);
     let seconds = parseInt(document.querySelector('.seconds').value);
 
-    // Форматування часу з ведучими нулями
     const formatTime = (time) => time < 10 ? `0${time}` : time;
 
     const clockElement = document.querySelector('.clock');
@@ -80,10 +79,9 @@ function startTimer() {
         return;
     }
 
-    // Відображення початкового часу
+
     clockElement.innerHTML = `${formatTime(hour)} : ${formatTime(minutes)} : ${formatTime(seconds)} : 00`;
 
-    // Додавання мілісекунд
     let milliseconds = 1000;
 
     myClock = setInterval(() => {
@@ -108,10 +106,9 @@ function startTimer() {
                 alert('Ok');
             }
 
-            // Оновлення HTML елементу з часом
             clockElement.innerHTML = `${formatTime(hour)} : ${formatTime(minutes)} : ${formatTime(seconds)} : ${formatTime(Math.floor(milliseconds / 10))}`;
         }
-    }, 10); // Оновлення кожні 10 мілісекунд
+    }, 10);
 }
 
 function stopTimer() {
